@@ -1,4 +1,4 @@
-import { lcd, ANGEL_ENDOWMENT_ADDRESS, apANC_CONTRACT_ADDRESS, SNAP_BLOCK_HEIGHT } from './utils.js';
+import { lcd, ANGEL_ENDOWMENT_ADDRESS, apANC_CONTRACT_ADDRESS, SNAP_BLOCK_HEIGHT } from "./utils.js";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -29,7 +29,7 @@ const getCharityData = async (address) => {
   
   return {
     amount: lockedApAnc + liquidApAnc,
-    denom: 'aUST', // 1 apANC === 1 aUST
+    denom: "aUST", // 1 apANC === 1 aUST
     address
   };
 }
