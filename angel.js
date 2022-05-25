@@ -20,6 +20,7 @@ const main = async () => {
 }
 
 const getCharityData = async (address) => {
+  const { owner } = (await lcd.wasm.contractInfo(address)).init_msg
   const { locked_cw20, liquid_cw20 } = await lcd.wasm.contractQuery(
     apANC_CONTRACT_ADDRESS, 
     { balance: { address }}, 
@@ -30,7 +31,7 @@ const getCharityData = async (address) => {
   return {
     amount: lockedApAnc + liquidApAnc,
     denom: "aUST", // 1 apANC === 1 aUST
-    address
+    address: owner
   };
 }
 
